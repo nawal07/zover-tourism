@@ -1,0 +1,207 @@
+{
+  "metadata": {
+    "title": "Zover International Travel & Tourism",
+    "description": "Premium travel and tourism services in Saudi Arabia since 2004. Flights, luxury stays, bespoke journeys, and seamless experiences aligned with Vision 2030."
+  },
+  "common": {
+    "brandName": "Zover",
+    "tagline": "We travel with you in every step",
+    "cta": {
+      "explore": "Explore Journeys",
+      "contact": "Contact Us",
+      "whatsapp": "Chat on WhatsApp"
+    },
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "services": "Services",
+      "partners": "Partners",
+      "contact": "Contact",
+      "blog": "Blog",
+      "inquiry": "Inquiry"
+    },
+    "language": {
+      "switchTo": "العربية",
+      "current": "English"
+    },
+    "a11y": {
+      "skipToContent": "Skip to main content",
+      "mainNav": "Main navigation",
+      "mobileNav": "Mobile navigation menu",
+      "openMenu": "Open menu",
+      "closeMenu": "Close menu"
+    }
+  },
+  "footer": {
+    "tagline": "Your gateway to extraordinary travel experiences across Saudi Arabia and the world since 2004.",
+    "explore": "Explore",
+    "more": "More",
+    "contact": "Contact",
+    "follow": "Follow us",
+    "cr": "Commercial Registration",
+    "vat": "VAT Number",
+    "rights": "All rights reserved.",
+    "crafted": "Crafted for premium travel experiences."
+  },
+  "pages": {
+    "about": {
+      "eyebrow": "Our Story",
+      "title": "About Zover",
+      "description": "Leading travel and tourism in the Kingdom with innovation, quality, and a passion for exceptional journeys.",
+      "teamEyebrow": "Our people",
+      "teamTitle": "The team behind every journey",
+      "segmentsEyebrow": "Who we serve",
+      "segmentsTitle": "Target markets",
+      "segmentsDescription": "Tailored experiences for leisure, business, luxury, family, cultural, and wellness travelers.",
+      "clientsEyebrow": "Our clients",
+      "clientsTitle": "Individuals & businesses",
+      "strengthsEyebrow": "Why us",
+      "strengthsTitle": "Our strengths",
+      "cta": "Speak with our team"
+    },
+    "services": {
+      "eyebrow": "What We Offer",
+      "title": "Our Services",
+      "description": "From flight ticketing and luxury hotels to VIP travel, MICE, and bespoke itineraries.",
+      "intro": "Comprehensive travel and tourism services designed around your needs — every detail handled with professionalism and care.",
+      "ctaTitle": "Ready to plan your journey?",
+      "ctaDescription": "Submit an inquiry or contact our Riyadh team for a tailored proposal.",
+      "ctaInquiry": "Submit inquiry",
+      "ctaContact": "Contact us"
+    },
+    "partners": {
+      "eyebrow": "Trusted By",
+      "title": "Our Partners & Clients",
+      "description": "Strategic alliances with leading airlines, hotels, and organizations across the region.",
+      "intro": "Our clients are a source of pride and a testament to our ability to deliver comprehensive travel services with professionalism and excellence.",
+      "logoNote": "Partner logos display automatically when image files are added to the partners folder.",
+      "ctaTitle": "Become a partner",
+      "ctaDescription": "Connect with Zover for corporate travel, events, and strategic collaboration.",
+      "cta": "Contact us"
+    },
+    "contact": {
+      "eyebrow": "Get in Touch",
+      "title": "Contact Us",
+      "description": "Our team in Riyadh is ready to plan your next journey with precision and care.",
+      "infoTitle": "Reach us",
+      "addressLabel": "Address",
+      "emailLabel": "Email",
+      "phoneLabel": "Phone",
+      "hoursLabel": "Working hours",
+      "hoursValue": "Sunday – Thursday, 9:00 AM – 6:00 PM (Riyadh)",
+      "whatsapp": "WhatsApp",
+      "inquiryLink": "Travel inquiry form",
+      "formTitle": "Send a message",
+      "formDescription": "We will respond within one business day. No backend connected yet — demo UI only.",
+      "mapTitle": "Visit us in Riyadh",
+      "mapNote": "Map placeholder — update embed coordinates for exact office location."
+    },
+    "blog": {
+      "eyebrow": "Insights",
+      "title": "Travel Blog",
+      "description": "Destination guides and luxury travel insights — powered by Sanity CMS in a future phase.",
+      "comingSoon": "Articles and destination guides are coming soon with CMS integration.",
+      "cta": "Contact us meanwhile"
+    },
+    "inquiry": {
+      "eyebrow": "Plan Ahead",
+      "title": "Travel Inquiry",
+      "description": "Tell us about your journey — ideal for Google Ads landing and bespoke trip planning.",
+      "formIntro": "Share your travel plans and our consultants will craft a tailored proposal."
+    }
+  },
+  "forms": {
+    "contact": {
+      "name": "Full name",
+      "email": "Email address",
+      "phone": "Phone number",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Send message",
+      "disclaimer": "Demo form — submissions are not sent to a server yet.",
+      "successTitle": "Thank you",
+      "successMessage": "Your message has been recorded locally. Backend integration will connect in a future phase."
+    },
+    "inquiry": {
+      "name": "Full name",
+      "email": "Email address",
+      "phone": "Phone number",
+      "tripType": "Trip type",
+      "travelers": "Number of travelers",
+      "destination": "Destination",
+      "dates": "Preferred dates",
+      "datesPlaceholder": "e.g. March 2026, flexible",
+      "message": "Additional details",
+      "messagePlaceholder": "Flights, hotels, VIP services, special requests…",
+      "selectPlaceholder": "Select type",
+      "types": {
+        "leisure": "Leisure",
+        "business": "Business",
+        "luxury": "Luxury",
+        "family": "Family",
+        "mice": "MICE / Events",
+        "other": "Other"
+      },
+      "submit": "Submit inquiry",
+      "disclaimer": "Demo form — inquiries are not sent to a server yet.",
+      "successTitle": "Inquiry received",
+      "successMessage": "Thank you. Our team will contact you once backend integration is live."
+    }
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Since 2004 · Saudi Arabia",
+      "title": "Extraordinary journeys, crafted with precision",
+      "subtitle": "From private aviation to bespoke itineraries, Zover redefines travel across the Kingdom and the world.",
+      "statFounded": "Established",
+      "statVision": "Vision 2030 Aligned"
+    },
+    "destinations": {
+      "eyebrow": "Destinations",
+      "title": "Featured journeys",
+      "description": "Curated escapes across the Kingdom and the world's most sought-after horizons.",
+      "cta": "Plan your itinerary"
+    },
+    "vision": {
+      "eyebrow": "Purpose",
+      "title": "Vision, mission & values",
+      "description": "Redefining travel through innovation, quality, and transparency — in step with Saudi Arabia's ambitions.",
+      "valuesTitle": "Our core values"
+    },
+    "services": {
+      "eyebrow": "Capabilities",
+      "title": "Comprehensive travel services",
+      "description": "Every detail of your journey — from boarding passes to bespoke VIP experiences.",
+      "cta": "View all services"
+    },
+    "why": {
+      "eyebrow": "Why Zover",
+      "title": "Strength that travels with you"
+    },
+    "partners": {
+      "eyebrow": "Trusted network",
+      "title": "Our partners & clients",
+      "description": "Strategic alliances with leading airlines, hotels, and institutions across the region.",
+      "cta": "See all partners"
+    },
+    "luxury": {
+      "eyebrow": "The Zover experience"
+    },
+    "testimonials": {
+      "eyebrow": "Client voices",
+      "title": "Trusted by discerning travelers",
+      "description": "Placeholder testimonials — ready to connect to Sanity CMS."
+    },
+    "gallery": {
+      "eyebrow": "Gallery",
+      "title": "Moments from the journey",
+      "description": "A glimpse of the experiences we craft — full gallery coming with CMS."
+    },
+    "contactCta": {
+      "eyebrow": "Begin your journey",
+      "title": "Let us travel with you in every step",
+      "description": "Speak with our Riyadh team for flights, packages, corporate travel, and VIP arrangements.",
+      "inquiry": "Submit an inquiry"
+    }
+  }
+}
