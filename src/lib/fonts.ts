@@ -1,19 +1,29 @@
+import { DM_Sans, Playfair_Display, Tajawal } from "next/font/google";
 import localFont from "next/font/local";
 
-/** English luxury display — profile brand font */
-export const fontBernadette = localFont({
-  src: "../../public/fonts/bernadette.ttf",
-  variable: "--font-bernadette",
+/** English body & UI — DM Sans (reference homepage) */
+export const fontDmSans = DM_Sans({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-dm-sans",
   display: "swap",
-  weight: "400",
 });
 
-/** English / bilingual elegant headings */
-export const fontElMessiri = localFont({
-  src: "../../public/fonts/elmessiri-bold.otf",
-  variable: "--font-elmessiri",
+/** English display — Playfair Display (reference homepage) */
+export const fontPlayfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "700", "900"],
+  style: ["normal", "italic"],
+  variable: "--font-playfair",
   display: "swap",
-  weight: "700",
+});
+
+/** Arabic label on language switcher (reference) */
+export const fontTajawal = Tajawal({
+  subsets: ["arabic"],
+  weight: ["400", "700"],
+  variable: "--font-tajawal",
+  display: "swap",
 });
 
 /** Arabic body */
@@ -48,8 +58,9 @@ export const fontDigiMaryam = localFont({
 });
 
 export const fontVariables = [
-  fontBernadette.variable,
-  fontElMessiri.variable,
+  fontDmSans.variable,
+  fontPlayfair.variable,
+  fontTajawal.variable,
   fontAlmarai.variable,
   fontDigiMaryam.variable,
 ].join(" ");

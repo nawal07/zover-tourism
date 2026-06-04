@@ -2,8 +2,8 @@
 @import "../styles/tokens.css";
 
 :root {
-  --background: var(--color-cream);
-  --foreground: var(--color-midnight);
+  --background: var(--color-dark);
+  --foreground: var(--color-pearl);
 }
 
 @theme inline {
@@ -24,11 +24,20 @@
   --color-brand-orange: var(--color-brand-orange);
   --color-brand-green: var(--color-brand-green);
   --color-brand-gold: var(--color-brand-gold);
+  --color-purple: var(--color-purple);
+  --color-purple-light: var(--color-purple-light);
+  --color-purple-dark: var(--color-purple-dark);
+  --color-dark: var(--color-dark);
+  --color-dark-elevated: var(--color-dark-elevated);
+  --color-dark-footer: var(--color-dark-footer);
+  --color-yellow: var(--color-yellow);
+  --color-card: var(--color-card);
 
-  --font-display-en: var(--font-bernadette);
-  --font-heading-en: var(--font-elmessiri);
+  --font-display-en: var(--font-playfair);
+  --font-heading-en: var(--font-dm-sans);
   --font-body-ar: var(--font-almarai);
   --font-display-ar: var(--font-digi-maryam);
+  --font-lang-ar: var(--font-tajawal);
 
   --radius-sm: var(--radius-sm);
   --radius-md: var(--radius-md);
@@ -57,12 +66,21 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     overflow-x: clip;
-    /* Prevent horizontal overflow from full-bleed sections; keep notch padding */
-    padding-inline: env(safe-area-inset-left) env(safe-area-inset-right);
+  }
+
+  html.has-custom-cursor body {
+    cursor: none;
+  }
+
+  @media (max-width: 768px), (pointer: coarse) {
+    html.has-custom-cursor body {
+      cursor: auto;
+    }
   }
 
   [dir="ltr"] body {
-    font-family: var(--font-heading-en), Georgia, "Times New Roman", serif;
+    font-family: var(--font-heading-en), system-ui, sans-serif;
+    font-weight: 400;
   }
 
   [dir="rtl"] body {
@@ -71,13 +89,13 @@
 
   ::selection {
     background: color-mix(in srgb, var(--color-gold) 35%, transparent);
-    color: var(--color-midnight);
+    color: var(--color-pearl);
   }
 }
 
 @layer utilities {
   .font-display {
-    font-family: var(--font-display-en), cursive;
+    font-family: var(--font-display-en), Georgia, "Times New Roman", serif;
   }
 
   [dir="rtl"] .font-display {
@@ -85,12 +103,16 @@
   }
 
   .font-heading {
-    font-family: var(--font-heading-en), serif;
+    font-family: var(--font-heading-en), system-ui, sans-serif;
   }
 
   [dir="rtl"] .font-heading {
     font-family: var(--font-body-ar), sans-serif;
     font-weight: 700;
+  }
+
+  .font-lang {
+    font-family: var(--font-lang-ar), var(--font-body-ar), sans-serif;
   }
 
   .container-luxury {
@@ -115,27 +137,115 @@
     text-wrap: balance;
   }
 
+  .section-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+  }
+
+  .gradient-text-accent {
+    font-style: italic;
+    color: var(--color-yellow);
+    background-image: linear-gradient(135deg, var(--color-gold), var(--color-yellow));
+    background-size: 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+  @supports ((-webkit-background-clip: text) or (background-clip: text)) {
+    .gradient-text-accent {
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  .hero-grid-overlay {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 60px 60px;
+    opacity: 0.4;
+  }
+
+  .btn-pill-primary {
+    background: linear-gradient(135deg, var(--color-gold), var(--color-gold-muted));
+    box-shadow: 0 0 0 0 rgba(249, 122, 48, 0.4);
+  }
+
+  .btn-pill-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-orange);
+  }
+
+  .btn-pill-secondary {
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(10px);
+  }
+
+  .btn-pill-secondary:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+  }
+
+  .btn-pill-wa {
+    background: var(--color-brand-green);
+  }
+
+  .btn-pill-wa:hover {
+    background: #20b558;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(37, 211, 102, 0.35);
+  }
+
+  .glass-panel {
+    background: rgba(13, 11, 21, 0.92);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .glass-panel-light {
+    background: color-mix(in srgb, var(--color-pearl) 8%, transparent);
+    backdrop-filter: blur(12px);
+    border: 1px solid color-mix(in srgb, var(--color-gold) 25%, transparent);
+  }
+
   .gradient-hero {
     background:
       radial-gradient(
-        ellipse 80% 60% at 50% 0%,
-        color-mix(in srgb, var(--color-brand-orange) 20%, transparent),
-        transparent 70%
+        ellipse 60% 50% at 20% 50%,
+        rgba(249, 122, 48, 0.12),
+        transparent
       ),
-      linear-gradient(
-        180deg,
-        var(--color-brand-indigo) 0%,
-        var(--color-navy) 55%,
-        #2a2858 100%
-      );
+      radial-gradient(
+        ellipse 50% 60% at 80% 50%,
+        rgba(251, 196, 46, 0.08),
+        transparent
+      ),
+      linear-gradient(135deg, var(--color-purple-dark) 0%, #1a0d40 50%, var(--color-purple-dark) 100%);
+  }
+
+  .gradient-hero-page {
+    background: linear-gradient(
+      135deg,
+      rgba(13, 11, 21, 0.95) 0%,
+      rgba(45, 26, 94, 0.75) 40%,
+      rgba(13, 11, 21, 0.9) 100%
+    );
   }
 
   .animate-marquee {
-    animation: marquee 40s linear infinite;
+    animation: marquee 28s linear infinite;
   }
 
   [dir="rtl"] .animate-marquee {
     animation-direction: reverse;
+  }
+
+  .animate-marquee:hover {
+    animation-play-state: paused;
   }
 
   @keyframes marquee {
@@ -147,23 +257,74 @@
     }
   }
 
-  @media (prefers-reduced-motion: reduce) {
-    html {
-      scroll-behavior: auto;
-    }
+  .animate-wa-pulse {
+    animation: wa-pulse 3s ease-in-out infinite;
+  }
 
-    .animate-marquee {
-      animation: none;
+  @keyframes wa-pulse {
+    0%,
+    100% {
+      box-shadow:
+        0 4px 20px rgba(37, 211, 102, 0.4),
+        0 0 0 0 rgba(37, 211, 102, 0.3);
+    }
+    50% {
+      box-shadow:
+        0 4px 20px rgba(37, 211, 102, 0.4),
+        0 0 0 12px rgba(37, 211, 102, 0);
     }
   }
 
-  .glass-panel {
-    background: color-mix(in srgb, var(--color-pearl) 8%, transparent);
-    backdrop-filter: blur(12px);
-    border: 1px solid color-mix(in srgb, var(--color-gold) 25%, transparent);
+  @keyframes float-orb {
+    0%,
+    100% {
+      transform: translateY(0) scale(1);
+    }
+    50% {
+      transform: translateY(-30px) scale(1.05);
+    }
   }
 
-  /* RTL-aware helpers — prefer logical properties in new components */
+  .animate-float-orb {
+    animation: float-orb 8s ease-in-out infinite;
+  }
+
+  @keyframes scroll-line {
+    0% {
+      transform: scaleY(0);
+      transform-origin: top;
+    }
+    50% {
+      transform: scaleY(1);
+      transform-origin: top;
+    }
+    51% {
+      transform: scaleY(1);
+      transform-origin: bottom;
+    }
+    100% {
+      transform: scaleY(0);
+      transform-origin: bottom;
+    }
+  }
+
+  .animate-scroll-line {
+    animation: scroll-line 2s ease infinite;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition:
+      opacity 0.7s ease,
+      transform 0.7s ease;
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
   .unicode-bidi-plaintext {
     unicode-bidi: plaintext;
   }
@@ -182,6 +343,39 @@
 
   .text-end {
     text-align: end;
+  }
+
+  .nav-link-underline::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    inset-inline-start: 0;
+    height: 1px;
+    width: 0;
+    background: var(--color-gold);
+    transition: width 0.3s ease;
+  }
+
+  .nav-link-underline:hover::after {
+    width: 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    .animate-marquee,
+    .animate-wa-pulse,
+    .animate-float-orb,
+    .animate-scroll-line {
+      animation: none;
+    }
+
+    .reveal {
+      opacity: 1;
+      transform: none;
+    }
   }
 }
 

@@ -30,7 +30,7 @@ export async function ContactPageContent() {
       <SectionWrapper>
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-14">
           <div>
-            <h2 className="font-display text-2xl text-midnight">
+            <h2 className="font-display text-2xl text-pearl">
               {t("infoTitle")}
             </h2>
             <ul className="mt-8 space-y-6">
@@ -91,8 +91,8 @@ export async function ContactPageContent() {
           </div>
 
           <MotionWrapper>
-            <div className="rounded-xl border border-border bg-pearl p-6 shadow-soft lg:p-8">
-              <h2 className="font-heading text-xl text-midnight">
+            <div className="rounded-xl border border-pearl/8 bg-card p-6 shadow-soft lg:p-8">
+              <h2 className="font-heading text-xl text-pearl">
                 {t("formTitle")}
               </h2>
               <p className="mt-2 text-sm text-muted">{t("formDescription")}</p>
@@ -104,10 +104,10 @@ export async function ContactPageContent() {
         </div>
       </SectionWrapper>
 
-      <SectionWrapper variant="sand">
-        <h2 className="font-heading text-xl text-midnight">{t("mapTitle")}</h2>
+      <SectionWrapper variant="elevated">
+        <h2 className="font-heading text-xl text-pearl">{t("mapTitle")}</h2>
         <p className="mt-2 text-sm text-muted">{address}</p>
-        <div className="relative mt-6 min-h-[240px] overflow-hidden rounded-xl border border-border bg-sand sm:aspect-video sm:min-h-0">
+        <div className="relative mt-6 min-h-[240px] overflow-hidden rounded-xl border border-pearl/8 bg-card sm:aspect-video sm:min-h-0">
           <iframe
             title={t("mapTitle")}
             src={MAP_EMBED}
@@ -139,7 +139,7 @@ function ContactInfoItem({
       </span>
       <div>
         <p className="text-xs uppercase tracking-wider text-muted">{label}</p>
-        <p className="mt-1 text-midnight">{value}</p>
+        <p className="mt-1 text-pearl/80">{value}</p>
       </div>
     </li>
   );

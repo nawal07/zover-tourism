@@ -3,10 +3,10 @@ export const BRAND = {
   logo: {
     src: "/brand/zover-logo.png",
     iconSrc: "/brand/zover-logo.png",
-    width: 240,
-    height: 72,
-    iconWidth: 48,
-    iconHeight: 48,
+    width: 160,
+    height: 48,
+    iconWidth: 36,
+    iconHeight: 36,
   },
   colors: {
     indigo: "#3F3D8B",

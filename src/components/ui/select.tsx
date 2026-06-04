@@ -9,7 +9,7 @@ export function Select({
   return (
     <select
       className={cn(
-        "flex h-11 w-full appearance-none rounded-md border border-border bg-pearl px-4 text-sm text-midnight",
+        "flex h-11 w-full appearance-none rounded-md border border-pearl/12 bg-card px-4 text-sm text-pearl",
         "focus-visible:border-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-0 focus-visible:outline-gold/30",
         "disabled:cursor-not-allowed disabled:opacity-50",
         className,

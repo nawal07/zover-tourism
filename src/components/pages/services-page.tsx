@@ -59,10 +59,10 @@ export async function ServicesPageContent() {
             >
               <div className="grid gap-10 lg:grid-cols-12 lg:items-start">
                 <MotionWrapper className="lg:col-span-4">
-                  <span className="inline-flex size-14 items-center justify-center rounded-xl bg-navy/8 text-navy">
+                  <span className="inline-flex size-14 items-center justify-center rounded-xl border border-gold/20 bg-gold/10 text-gold">
                     <Icon className="size-6" strokeWidth={1.5} aria-hidden />
                   </span>
-                  <h2 className="mt-5 font-display text-3xl text-midnight">
+                  <h2 className="mt-5 font-display text-3xl font-bold text-pearl">
                     {pickLocalized(category.title, locale)}
                   </h2>
                   <p className="mt-3 leading-relaxed text-muted">
@@ -75,15 +75,14 @@ export async function ServicesPageContent() {
                       <li
                         key={item.en}
                         className={cn(
-                          "flex items-start gap-3 rounded-lg border border-border bg-pearl p-4",
-                          isAlt && "bg-cream",
+                          "flex items-start gap-3 rounded-lg border border-pearl/8 bg-card p-4",
                         )}
                       >
                         <span
                           className="mt-1.5 size-1.5 shrink-0 rounded-full bg-gold"
                           aria-hidden
                         />
-                        <span className="text-sm leading-relaxed text-navy-soft">
+                        <span className="text-sm leading-relaxed text-pearl/65">
                           {pickLocalized(item, locale)}
                         </span>
                       </li>
@@ -96,7 +95,7 @@ export async function ServicesPageContent() {
         })}
       </div>
 
-      <SectionWrapper variant="dark">
+      <SectionWrapper variant="cta">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-display text-3xl text-pearl sm:text-4xl">
             {t("ctaTitle")}

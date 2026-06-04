@@ -1,7 +1,6 @@
 "use client";
 
 import { useLocale, useTranslations } from "next-intl";
-import { Languages } from "lucide-react";
 import { Link, usePathname } from "@/i18n/navigation";
 import type { Locale } from "@/constants/site";
 import { cn } from "@/lib/utils";
@@ -22,24 +21,22 @@ export function LanguageSwitcher({
 
   const styles =
     variant === "light"
-      ? "text-pearl/90 hover:text-gold border-pearl/20 hover:border-gold/40"
-      : "text-midnight/80 hover:text-gold border-midnight/15 hover:border-gold/50";
+      ? "border-pearl/12 bg-pearl/8 text-pearl/70 hover:border-gold hover:text-gold"
+      : "border-border bg-card text-pearl/70 hover:border-gold hover:text-gold";
 
   return (
     <Link
       href={pathname}
       locale={targetLocale}
       className={cn(
-        "inline-flex min-h-11 min-w-[3rem] items-center justify-center gap-2 rounded-full border px-3.5 py-2 text-xs font-heading tracking-wide transition-colors duration-300 touch-manipulation sm:min-h-10 sm:min-w-0",
+        "font-lang inline-flex min-h-10 min-w-[3rem] items-center justify-center rounded-full border px-3.5 py-2 text-[0.78rem] tracking-[0.06em] transition-all duration-300 touch-manipulation",
         "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold",
         styles,
         className,
       )}
       aria-label={`${t("current")} — switch to ${t("switchTo")}`}
     >
-      <Languages className="size-3.5 shrink-0 opacity-80" aria-hidden />
-      <span className="hidden sm:inline">{t("switchTo")}</span>
-      <span className="sm:hidden">{targetLocale.toUpperCase()}</span>
+      {t("switchTo")}
     </Link>
   );
 }

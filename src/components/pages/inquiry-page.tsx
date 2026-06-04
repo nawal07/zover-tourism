@@ -18,7 +18,7 @@ export async function InquiryPageContent() {
       <SectionWrapper>
         <div className="mx-auto max-w-2xl">
           <MotionWrapper>
-            <div className="rounded-xl border border-border bg-pearl p-6 shadow-soft lg:p-10">
+            <div className="rounded-xl border border-border bg-card border border-pearl/8 p-6 shadow-soft lg:p-10">
               <p className="text-sm text-muted">{t("formIntro")}</p>
               <div className="mt-6">
                 <InquiryForm />

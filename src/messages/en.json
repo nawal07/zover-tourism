@@ -150,17 +150,23 @@
   },
   "home": {
     "hero": {
-      "eyebrow": "Since 2004 · Saudi Arabia",
-      "title": "Extraordinary journeys, crafted with precision",
-      "subtitle": "From private aviation to bespoke itineraries, Zover redefines travel across the Kingdom and the world.",
-      "statFounded": "Established",
-      "statVision": "Vision 2030 Aligned"
+      "eyebrow": "Premium Saudi Travel Since 2004",
+      "titleBefore": "Extraordinary journeys,",
+      "titleHighlight": "crafted",
+      "titleAfter": "with precision",
+      "subtitle": "From private aviation to bespoke itineraries across the Kingdom and the world — Zover redefines what travel can be.",
+      "scroll": "Scroll",
+      "explore": "Explore Journeys",
+      "plan": "Plan Your Trip",
+      "statDestinations": "Destinations",
+      "statYears": "Years of Excellence",
+      "statTravelers": "Happy Travelers",
+      "statPartners": "Global Partners"
     },
     "destinations": {
-      "eyebrow": "Destinations",
-      "title": "Featured journeys",
-      "description": "Curated escapes across the Kingdom and the world's most sought-after horizons.",
-      "cta": "Plan your itinerary"
+      "eyebrow": "Featured Journeys",
+      "title": "Where will you go next?",
+      "viewAll": "View all destinations"
     },
     "vision": {
       "eyebrow": "Purpose",
@@ -169,14 +175,16 @@
       "valuesTitle": "Our core values"
     },
     "services": {
-      "eyebrow": "Capabilities",
-      "title": "Comprehensive travel services",
-      "description": "Every detail of your journey — from boarding passes to bespoke VIP experiences.",
-      "cta": "View all services"
+      "eyebrow": "What We Offer",
+      "title": "Complete travel,",
+      "titleHighlight": "end-to-end",
+      "description": "Every detail of your journey handled with precision — from boarding passes to bespoke VIP experiences.",
+      "cta": "View All Services"
     },
     "why": {
       "eyebrow": "Why Zover",
-      "title": "Strength that travels with you"
+      "title": "Strength that travels with you",
+      "description": "Established in Riyadh in 2004, Zover has been the trusted partner for thousands of travelers across the Gulf."
     },
     "partners": {
       "eyebrow": "Trusted network",
@@ -188,9 +196,8 @@
       "eyebrow": "The Zover experience"
     },
     "testimonials": {
-      "eyebrow": "Client voices",
-      "title": "Trusted by discerning travelers",
-      "description": "Placeholder testimonials — ready to connect to Sanity CMS."
+      "eyebrow": "Reviews",
+      "title": "What our travelers say"
     },
     "gallery": {
       "eyebrow": "Gallery",
@@ -199,9 +206,14 @@
     },
     "contactCta": {
       "eyebrow": "Begin your journey",
-      "title": "Let us travel with you in every step",
+      "title": "Let us travel with you",
+      "titleLine2": "in",
+      "titleHighlight": "every step",
       "description": "Speak with our Riyadh team for flights, packages, corporate travel, and VIP arrangements.",
-      "inquiry": "Submit an inquiry"
+      "availability": "Available 24/7.",
+      "contactTeam": "Contact Our Team",
+      "inquiry": "Submit an Inquiry",
+      "whatsapp": "WhatsApp Us"
     }
   }
 }

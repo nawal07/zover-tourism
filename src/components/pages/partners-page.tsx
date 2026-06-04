@@ -25,7 +25,7 @@ export async function PartnersPageContent() {
 
       <SectionWrapper>
         <MotionWrapper>
-          <p className="mx-auto max-w-3xl text-center text-base leading-relaxed text-navy-soft sm:text-lg">
+          <p className="mx-auto max-w-3xl text-center text-base leading-relaxed text-pearl/65 sm:text-lg">
             {t("intro")}
           </p>
           <p className="mx-auto mt-4 max-w-2xl text-center text-sm text-muted">
@@ -56,7 +56,7 @@ export async function PartnersPageContent() {
         );
       })}
 
-      <SectionWrapper variant="dark">
+      <SectionWrapper variant="cta">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-display text-2xl text-pearl sm:text-3xl">{t("ctaTitle")}</h2>
           <p className="mt-4 text-sm text-pearl/80 sm:text-base">{t("ctaDescription")}</p>

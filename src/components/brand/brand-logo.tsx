@@ -24,7 +24,7 @@ export function BrandLogo({
     <span
       className={cn(
         "relative inline-flex shrink-0 items-center",
-        onDark && "rounded-lg bg-pearl/95 px-2 py-1.5 shadow-soft",
+        onDark && "brightness-110",
         className,
       )}
     >
@@ -35,7 +35,9 @@ export function BrandLogo({
         height={height}
         className={cn(
           "h-auto w-auto max-w-full object-contain object-start",
-          isIcon ? "max-h-10 max-w-[3rem]" : "max-h-11 max-w-[min(12.5rem,46vw)] sm:max-h-14 sm:max-w-none",
+          isIcon
+            ? "max-h-8 max-w-[2.25rem]"
+            : "max-h-8 max-w-[min(9.5rem,40vw)] sm:max-h-9 sm:max-w-[10rem]",
         )}
         style={{ width: "auto", height: "auto", maxWidth: width, maxHeight: height }}
         priority={priority}

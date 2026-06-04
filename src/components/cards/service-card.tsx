@@ -7,7 +7,6 @@ import {
   Shield,
   type LucideIcon,
 } from "lucide-react";
-import { MotionWrapper } from "@/components/animations/motion-wrapper";
 import type { HomeService } from "@/data/home-content";
 import type { Locale } from "@/constants/site";
 import { pickLocalized } from "@/lib/localized";
@@ -25,30 +24,40 @@ const iconMap: Record<HomeService["icon"], LucideIcon> = {
 type ServiceCardProps = {
   service: HomeService;
   locale: Locale;
-  index?: number;
+  compact?: boolean;
 };
 
-export function ServiceCard({ service, locale, index = 0 }: ServiceCardProps) {
+export function ServiceCard({ service, locale, compact }: ServiceCardProps) {
   const Icon = iconMap[service.icon];
 
   return (
-    <MotionWrapper delay={index * 0.06}>
-      <article
+    <article
+      className={cn(
+        "group relative overflow-hidden bg-dark p-6 transition-colors duration-300 sm:p-8",
+        "hover:bg-purple/8",
+        compact && "border-0",
+        !compact &&
+          "rounded-xl border border-border bg-card hover:border-gold/20",
+      )}
+    >
+      <span
+        className="absolute start-0 top-0 h-0 w-[3px] bg-gradient-to-b from-gold to-purple transition-[height] duration-400 group-hover:h-full"
+        aria-hidden
+      />
+      <span
         className={cn(
-          "group h-full rounded-xl border border-border bg-pearl p-6",
-          "transition-all duration-300 hover:border-gold/40 hover:shadow-soft",
+          "inline-flex size-12 items-center justify-center rounded-xl border border-gold/20 bg-gold/10 text-gold",
+          "transition-all duration-300 group-hover:scale-110 group-hover:border-gold group-hover:bg-gold/20",
         )}
       >
-        <span className="inline-flex size-12 items-center justify-center rounded-lg bg-navy/8 text-navy transition-colors group-hover:bg-gold/15 group-hover:text-gold">
-          <Icon className="size-5" strokeWidth={1.5} aria-hidden />
-        </span>
-        <h3 className="mt-5 font-heading text-lg text-midnight">
-          {pickLocalized(service.title, locale)}
-        </h3>
-        <p className="mt-2 text-sm leading-relaxed text-muted">
-          {pickLocalized(service.description, locale)}
-        </p>
-      </article>
-    </MotionWrapper>
+        <Icon className="size-5" strokeWidth={1.5} aria-hidden />
+      </span>
+      <h3 className="mt-5 text-base font-semibold tracking-tight text-pearl">
+        {pickLocalized(service.title, locale)}
+      </h3>
+      <p className="mt-2 text-[0.82rem] leading-relaxed text-pearl/40">
+        {pickLocalized(service.description, locale)}
+      </p>
+    </article>
   );
 }

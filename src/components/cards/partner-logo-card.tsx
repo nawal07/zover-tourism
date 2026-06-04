@@ -23,7 +23,7 @@ export function PartnerLogoCard({ partner }: PartnerLogoCardProps) {
   return (
     <div
       className={cn(
-        "flex h-24 items-center justify-center rounded-xl border border-border bg-pearl p-4 sm:h-28 sm:p-6",
+        "flex h-24 items-center justify-center rounded-xl border border-border bg-card p-4 sm:h-28 sm:p-6",
         "transition-all duration-300 hover:border-gold/40 hover:shadow-soft",
       )}
     >
@@ -39,7 +39,7 @@ export function PartnerLogoCard({ partner }: PartnerLogoCardProps) {
       ) : (
         <div className="flex flex-col items-center gap-2 text-center">
           <span
-            className="flex size-12 items-center justify-center rounded-lg bg-sand font-heading text-sm text-navy-soft"
+            className="flex size-12 items-center justify-center rounded-lg bg-card font-heading text-sm text-pearl/50"
             aria-hidden
           >
             {initials}

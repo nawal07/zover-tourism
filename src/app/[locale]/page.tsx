@@ -3,11 +3,9 @@ import { ContactCtaSection } from "@/components/sections/home/contact-cta-sectio
 import { DestinationsSection } from "@/components/sections/home/destinations-section";
 import { GallerySection } from "@/components/sections/home/gallery-section";
 import { HeroSection } from "@/components/sections/home/hero-section";
-import { LuxuryBannerSection } from "@/components/sections/home/luxury-banner-section";
 import { PartnersSection } from "@/components/sections/home/partners-section";
 import { ServicesSection } from "@/components/sections/home/services-section";
 import { TestimonialsSection } from "@/components/sections/home/testimonials-section";
-import { VisionMissionSection } from "@/components/sections/home/vision-mission-section";
 import { WhyChooseSection } from "@/components/sections/home/why-choose-section";
 import type { Locale } from "@/constants/site";
 import { homeSEO } from "@/data/site-content";
@@ -34,11 +32,9 @@ export default async function HomePage({ params }: HomePageProps) {
     <main>
       <HeroSection />
       <DestinationsSection />
-      <VisionMissionSection />
       <ServicesSection />
       <WhyChooseSection />
       <PartnersSection />
-      <LuxuryBannerSection />
       <TestimonialsSection />
       <GallerySection />
       <ContactCtaSection />

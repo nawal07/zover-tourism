@@ -1,59 +1,63 @@
-import { MotionWrapper } from "@/components/animations/motion-wrapper";
+import { ScrollReveal } from "@/components/animations/scroll-reveal";
 import { cn } from "@/lib/utils";
 
 type SectionHeadingProps = {
   eyebrow?: string;
   title: string;
+  titleHighlight?: string;
+  titleHighlightOnNewLine?: boolean;
   description?: string;
   align?: "start" | "center";
-  dark?: boolean;
   className?: string;
+  descriptionClassName?: string;
 };
 
 export function SectionHeading({
   eyebrow,
   title,
+  titleHighlight,
+  titleHighlightOnNewLine = false,
   description,
   align = "center",
-  dark = false,
   className,
+  descriptionClassName,
 }: SectionHeadingProps) {
   return (
-    <MotionWrapper
+    <ScrollReveal
       className={cn(
         "max-w-3xl",
         align === "center" && "mx-auto text-center",
         className,
       )}
     >
-      {eyebrow && (
-        <p
-          className={cn(
-            "mb-3 text-xs uppercase tracking-[0.3em]",
-            dark ? "text-gold-light" : "text-gold",
-          )}
-        >
-          {eyebrow}
-        </p>
-      )}
+      {eyebrow && <p className="section-eyebrow mb-4">{eyebrow}</p>}
       <h2
         className={cn(
-          "font-display text-balance text-[clamp(1.625rem,3.5vw+1rem,3rem)] sm:text-4xl lg:text-5xl",
-          dark ? "text-pearl" : "text-midnight",
+          "font-display text-balance font-black leading-[1.1] text-pearl",
+          "text-[clamp(2.2rem,4vw,3.5rem)]",
         )}
       >
         {title}
+        {titleHighlight && (
+          <>
+            {titleHighlightOnNewLine ? <br /> : " "}
+            <em className="gradient-text-accent font-black not-italic">
+              {titleHighlight}
+            </em>
+          </>
+        )}
       </h2>
       {description && (
         <p
           className={cn(
-            "mt-4 text-base leading-relaxed sm:text-lg",
-            dark ? "text-pearl/75" : "text-muted",
+            "mt-5 max-w-[520px] text-base font-light leading-[1.7] text-pearl/50 sm:text-[1rem]",
+            align === "center" && "mx-auto",
+            descriptionClassName,
           )}
         >
           {description}
         </p>
       )}
-    </MotionWrapper>
+    </ScrollReveal>
   );
 }

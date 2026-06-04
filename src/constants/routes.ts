@@ -15,5 +15,4 @@ export const NAV_LINKS: RouteKey[] = [
   "about",
   "services",
   "partners",
-  "contact",
 ];

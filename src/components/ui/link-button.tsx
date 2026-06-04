@@ -4,16 +4,16 @@ import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 
 const linkButtonVariants = cva(
-  "inline-flex items-center justify-center gap-2 rounded-md font-heading text-sm tracking-wide transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold",
+  "inline-flex items-center justify-center gap-2 rounded-full font-heading text-sm font-semibold tracking-wide transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold",
   {
     variants: {
       variant: {
-        primary: "bg-gold text-pearl hover:bg-gold-muted shadow-soft",
+        primary: "btn-pill-primary text-pearl",
         outline:
-          "border border-gold/60 bg-transparent text-gold hover:bg-gold/10",
+          "btn-pill-secondary text-pearl",
         ghost: "text-pearl hover:bg-pearl/10",
-        dark: "bg-midnight text-pearl hover:bg-navy-soft",
-        light: "bg-pearl text-midnight hover:bg-sand",
+        dark: "bg-purple text-pearl hover:bg-purple-light",
+        light: "bg-pearl/10 text-pearl hover:bg-pearl/15",
       },
       size: {
         sm: "h-9 px-4",
@@ -39,7 +39,11 @@ export function LinkButton({
 }: LinkButtonProps) {
   return (
     <Link
-        className={cn(linkButtonVariants({ variant, size }), "touch-manipulation", className)}
+      className={cn(
+        linkButtonVariants({ variant, size }),
+        "touch-manipulation",
+        className,
+      )}
       {...props}
     />
   );

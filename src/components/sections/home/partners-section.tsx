@@ -1,38 +1,28 @@
 import { getTranslations } from "next-intl/server";
-import { MotionWrapper } from "@/components/animations/motion-wrapper";
+import { ScrollReveal } from "@/components/animations/scroll-reveal";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { SectionHeading } from "@/components/sections/section-heading";
-import { LinkButton } from "@/components/ui/link-button";
-import { ROUTES } from "@/constants/routes";
 import { partnerPlaceholders } from "@/data/home-content";
 
 export async function PartnersSection() {
   const t = await getTranslations("home.partners");
 
   return (
-    <SectionWrapper variant="sand" id="partners">
-      <SectionHeading
-        eyebrow={t("eyebrow")}
-        title={t("title")}
-        description={t("description")}
-      />
-      <div className="mt-12 overflow-hidden">
-        <div className="flex animate-marquee gap-6 whitespace-nowrap motion-reduce:animate-none motion-reduce:flex-wrap motion-reduce:justify-center motion-reduce:gap-3 motion-reduce:whitespace-normal sm:gap-8">
-          {[...partnerPlaceholders, ...partnerPlaceholders].map((name, i) => (
+    <SectionWrapper id="partners" className="!py-20">
+      <SectionHeading eyebrow={t("eyebrow")} title={t("title")} />
+      <ScrollReveal className="mt-12 overflow-hidden">
+        <div className="flex animate-marquee gap-0 whitespace-nowrap motion-reduce:flex-wrap motion-reduce:justify-center motion-reduce:gap-3 motion-reduce:whitespace-normal">
+          {[...partnerPlaceholders, ...partnerPlaceholders].map((partner, i) => (
             <span
-              key={`${name}-${i}`}
-              className="inline-flex min-w-[140px] items-center justify-center rounded-lg border border-border bg-pearl px-6 py-4 font-heading text-sm tracking-wide text-navy-soft/80"
+              key={`${partner.name}-${i}`}
+              className="mx-2 inline-flex items-center gap-2.5 whitespace-nowrap rounded-full border border-pearl/8 bg-card px-8 py-3 text-[0.85rem] font-semibold tracking-[0.04em] text-pearl/60 transition-colors hover:border-gold hover:text-gold"
             >
-              {name}
+              <span aria-hidden>{partner.icon}</span>
+              {partner.name}
             </span>
           ))}
         </div>
-      </div>
-      <MotionWrapper className="mt-10 text-center">
-        <LinkButton href={ROUTES.partners} variant="outline">
-          {t("cta")}
-        </LinkButton>
-      </MotionWrapper>
+      </ScrollReveal>
     </SectionWrapper>
   );
 }

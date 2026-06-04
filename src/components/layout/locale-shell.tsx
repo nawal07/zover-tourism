@@ -18,7 +18,7 @@ export function LocaleShell({ locale, children, className }: LocaleShellProps) {
     <html lang={locale} dir={direction} className={cn(fontVariables, "h-full")}>
       <body
         className={cn(
-          "min-h-full flex flex-col bg-cream text-midnight antialiased",
+          "min-h-full flex flex-col bg-dark text-pearl antialiased",
           className,
         )}
       >

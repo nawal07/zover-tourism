@@ -8,8 +8,8 @@ export function Textarea({
   return (
     <textarea
       className={cn(
-        "flex min-h-[120px] w-full resize-y rounded-md border border-border bg-pearl px-4 py-3 text-sm text-midnight",
-        "placeholder:text-muted/70 transition-colors",
+        "flex min-h-[120px] w-full resize-y rounded-md border border-pearl/12 bg-card px-4 py-3 text-sm text-pearl",
+        "placeholder:text-pearl/35 transition-colors",
         "focus-visible:border-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-0 focus-visible:outline-gold/30",
         "disabled:cursor-not-allowed disabled:opacity-50",
         className,

@@ -23,7 +23,7 @@ export function ContactForm() {
         role="status"
         className="rounded-xl border border-brand-green/30 bg-brand-green/10 px-6 py-8 text-center"
       >
-        <p className="font-heading text-lg text-midnight">{t("successTitle")}</p>
+        <p className="font-heading text-lg text-pearl">{t("successTitle")}</p>
         <p className="mt-2 text-sm text-muted">{t("successMessage")}</p>
       </div>
     );

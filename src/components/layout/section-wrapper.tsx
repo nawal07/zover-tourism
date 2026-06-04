@@ -6,13 +6,17 @@ type SectionWrapperProps = {
   children: ReactNode;
   className?: string;
   as?: "section" | "div";
-  variant?: "default" | "dark" | "sand";
+  variant?: "default" | "elevated" | "gradient" | "cta" | "sand" | "dark";
 };
 
 const variantStyles = {
-  default: "bg-cream",
-  dark: "bg-midnight text-pearl",
-  sand: "bg-sand",
+  default: "bg-dark text-pearl",
+  dark: "bg-dark text-pearl",
+  elevated: "bg-dark-elevated text-pearl",
+  sand: "bg-dark-elevated text-pearl",
+  gradient:
+    "bg-gradient-to-b from-dark via-[#0f0d1e] to-dark text-pearl",
+  cta: "bg-gradient-to-br from-purple-dark via-[#1a0d40] to-purple-dark text-pearl",
 } as const;
 
 export function SectionWrapper({
