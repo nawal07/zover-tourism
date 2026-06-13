@@ -36,8 +36,8 @@ export function BrandLogo({
         className={cn(
           "h-auto w-auto max-w-full object-contain object-start",
           isIcon
-            ? "max-h-8 max-w-[2.25rem]"
-            : "max-h-8 max-w-[min(9.5rem,40vw)] sm:max-h-9 sm:max-w-[10rem]",
+            ? "max-h-10 max-w-11"
+            : "max-h-10 max-w-[min(12rem,44vw)] sm:max-h-12 sm:max-w-56",
         )}
         style={{ width: "auto", height: "auto", maxWidth: width, maxHeight: height }}
         priority={priority}

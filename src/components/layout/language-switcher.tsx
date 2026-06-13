@@ -6,7 +6,7 @@ import type { Locale } from "@/constants/site";
 import { cn } from "@/lib/utils";
 
 type LanguageSwitcherProps = {
-  variant?: "light" | "dark";
+  variant?: "light" | "dark" | "on-light";
   className?: string;
 };
 
@@ -22,7 +22,9 @@ export function LanguageSwitcher({
   const styles =
     variant === "light"
       ? "border-pearl/12 bg-pearl/8 text-pearl/70 hover:border-gold hover:text-gold"
-      : "border-border bg-card text-pearl/70 hover:border-gold hover:text-gold";
+      : variant === "on-light"
+        ? "border-gray-200 bg-transparent text-gray-600 hover:border-gold hover:text-gold"
+        : "border-border bg-card text-pearl/70 hover:border-gold hover:text-gold";
 
   return (
     <Link

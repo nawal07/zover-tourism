@@ -40,8 +40,7 @@ export function Navbar() {
       <header
         className={cn(
           "safe-nav-pt fixed inset-x-0 top-0 z-50 transition-all duration-400",
-          glass && "glass-panel",
-          !glass && "bg-transparent",
+          "border-b border-gray-100 bg-white/95 shadow-sm backdrop-blur-md",
           glass && "py-0",
         )}
         role="banner"
@@ -65,8 +64,8 @@ export function Navbar() {
             className="group shrink-0 transition-opacity hover:opacity-90"
             aria-label={t("brandName")}
           >
-            <BrandLogo variant="full" onDark priority className="hidden sm:block" />
-            <BrandLogo variant="icon" onDark priority className="sm:hidden" />
+            <BrandLogo variant="full" priority className="hidden sm:block" />
+            <BrandLogo variant="icon" priority className="sm:hidden" />
           </Link>
 
           <ul className="hidden items-center gap-8 lg:flex xl:gap-10">
@@ -80,8 +79,8 @@ export function Navbar() {
                   <Link
                     href={item.href}
                     className={cn(
-                      "nav-link-underline relative text-[0.85rem] font-medium uppercase tracking-[0.08em] text-pearl/70 transition-colors duration-300 hover:text-pearl",
-                      active && "text-pearl",
+                      "nav-link-underline relative text-[0.85rem] font-medium uppercase tracking-[0.08em] text-gray-600 transition-colors duration-300 hover:text-gray-900",
+                      active && "text-gray-900",
                     )}
                   >
                     {t(`nav.${item.key}`)}
@@ -98,15 +97,15 @@ export function Navbar() {
               </Link>
             </li>
             <li>
-              <LanguageSwitcher variant="light" />
+              <LanguageSwitcher variant="on-light" />
             </li>
           </ul>
 
           <div className="flex items-center gap-2 sm:gap-3 lg:hidden">
-            <LanguageSwitcher variant="light" />
+            <LanguageSwitcher variant="on-light" />
             <button
               type="button"
-              className="inline-flex size-11 shrink-0 touch-manipulation items-center justify-center rounded-md text-pearl transition-colors hover:bg-pearl/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+              className="inline-flex size-11 shrink-0 touch-manipulation items-center justify-center rounded-md text-gray-700 transition-colors hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
               onClick={() => setMobileOpen((o) => !o)}
               aria-expanded={mobileOpen}
               aria-controls="mobile-nav"
@@ -133,7 +132,7 @@ export function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-40 lg:hidden"
+            className="fixed inset-0 z-60 lg:hidden"
           >
             <m.button
               type="button"
