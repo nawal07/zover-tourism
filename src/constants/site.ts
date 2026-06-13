@@ -1,24 +1,24 @@
 export const SITE_CONFIG = {
-  name: "Zover International Travel & Tourism",
-  nameAr: "زوفر العالمية للسفر والسياحة",
-  legalName: "Zover International Travel and Tourism",
+  name: 'Zover International Travel & Tourism',
+  nameAr: 'زوفر العالمية للسفر والسياحة',
+  legalName: 'Zover International Travel and Tourism',
   foundedYear: 2004,
-  defaultLocale: "en" as const,
-  locales: ["en", "ar"] as const,
-  baseUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://zuvar.com.sa",
+  defaultLocale: 'en' as const,
+  locales: ['en', 'ar'] as const,
+  baseUrl: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://zuvar.com.sa',
   contact: {
-    email: "info@zuvar.com.sa",
-    phones: ["+966504235805", "+966550534946"],
+    email: 'info@zuvar.com.sa',
+    phones: ['+966550534946'],
     address: {
-      en: "Al Madinah Al Munawwarah Road, Al Badeiah District, Riyadh, Saudi Arabia",
-      ar: "طريق المدينة المنورة، حي البديعة، الرياض، المملكة العربية السعودية",
+      en: 'Al Madinah Al Munawwarah Road, Al Badeiah District, Riyadh, Saudi Arabia',
+      ar: 'طريق المدينة المنورة، حي البديعة، الرياض، المملكة العربية السعودية',
     },
-    whatsapp: "+966504235805",
+    whatsapp: '+966550534946',
   },
   social: {
-    instagram: "#",
-    linkedin: "#",
-    x: "#",
+    instagram: '#',
+    linkedin: '#',
+    x: '#',
   },
 } as const;
 
