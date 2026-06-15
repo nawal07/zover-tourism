@@ -37,11 +37,37 @@ export function Navbar() {
 
   return (
     <>
+      {/* Arc corner shape — fixed at z=49, below navbar (z=50); mirrors to right for RTL */}
+      <svg
+        aria-hidden
+        className={cn(
+          "pointer-events-none fixed top-0 hidden sm:block transition-opacity duration-500",
+          locale === "ar" ? "right-0" : "left-0",
+          glass ? "opacity-0" : "opacity-100",
+        )}
+        style={{ zIndex: 49, width: "40vw", height: "55vh" }}
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d={
+            locale === "ar"
+              ? "M 100,0 L 0,0 A 100,100 0 0,1 100,100 Z"
+              : "M 0,0 L 100,0 A 100,100 0 0,0 0,100 Z"
+          }
+          fill="white"
+        />
+      </svg>
       <header
         className={cn(
-          "safe-nav-pt fixed inset-x-0 top-0 z-50 transition-all duration-400",
-          "border-b border-gray-100 bg-white/95 shadow-sm backdrop-blur-md",
-          glass && "py-0",
+          "safe-nav-pt fixed inset-x-0 top-0 z-50 transition-all duration-500",
+          // sm+: transparent when not scrolled on home page
+          glass
+            ? "border-b border-gray-100 bg-white/95 shadow-sm backdrop-blur-md"
+            : "border-b border-transparent",
+          // mobile: always solid white — no transparent hero overlay on small screens
+          "max-sm:border-b max-sm:border-gray-100 max-sm:bg-white/95 max-sm:shadow-sm max-sm:backdrop-blur-md",
         )}
         role="banner"
       >
@@ -54,17 +80,19 @@ export function Navbar() {
 
         <nav
           className={cn(
-            "container-luxury flex items-center justify-between gap-2 transition-[height,padding] duration-400 sm:gap-4",
-            glass ? "h-[4rem] lg:h-[4.25rem]" : "h-[var(--nav-h)] lg:h-[var(--nav-h-lg)]",
+            "relative container-luxury flex items-center justify-between gap-2 sm:gap-4",
+            "h-18 transition-[height] duration-500",
+            !glass && "lg:h-28",
           )}
           aria-label={t("a11y.mainNav")}
         >
           <Link
             href={ROUTES.home}
-            className="group shrink-0 transition-opacity hover:opacity-90"
+            className="group shrink-0 transition-all duration-500 hover:opacity-90"
             aria-label={t("brandName")}
           >
-            <BrandLogo variant="full" priority className="hidden sm:block" />
+            <BrandLogo variant="full" priority size={glass ? "sm" : "default"} className="hidden lg:block" />
+            <BrandLogo variant="full" priority size="sm" className="hidden sm:block lg:hidden" />
             <BrandLogo variant="icon" priority className="sm:hidden" />
           </Link>
 
@@ -79,8 +107,11 @@ export function Navbar() {
                   <Link
                     href={item.href}
                     className={cn(
-                      "nav-link-underline relative text-[0.85rem] font-medium uppercase tracking-[0.08em] text-gray-600 transition-colors duration-300 hover:text-gray-900",
-                      active && "text-gray-900",
+                      "nav-link-underline relative text-[0.85rem] font-medium uppercase tracking-[0.08em] transition-colors duration-300",
+                      glass
+                        ? "text-gray-600 hover:text-gray-900"
+                        : "text-white/90 hover:text-white",
+                      active && (glass ? "text-gray-900" : "text-white"),
                     )}
                   >
                     {t(`nav.${item.key}`)}
@@ -97,15 +128,23 @@ export function Navbar() {
               </Link>
             </li>
             <li>
-              <LanguageSwitcher variant="on-light" />
+              <LanguageSwitcher variant={glass ? "on-light" : "light"} />
             </li>
           </ul>
 
           <div className="flex items-center gap-2 sm:gap-3 lg:hidden">
-            <LanguageSwitcher variant="on-light" />
+            {/* mobile (<sm): always on-light — navbar is always solid white */}
+            <span className="sm:hidden"><LanguageSwitcher variant="on-light" /></span>
+            {/* tablet (sm–lg): conditional based on glass */}
+            <span className="hidden sm:block"><LanguageSwitcher variant={glass ? "on-light" : "light"} /></span>
             <button
               type="button"
-              className="inline-flex size-11 shrink-0 touch-manipulation items-center justify-center rounded-md text-gray-700 transition-colors hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+              className={cn(
+                "inline-flex size-11 shrink-0 touch-manipulation items-center justify-center rounded-md transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold",
+                glass ? "text-gray-700 hover:bg-gray-100" : "text-white hover:bg-white/10",
+                // mobile: always dark icon — navbar is always white
+                "max-sm:text-gray-700 max-sm:hover:bg-gray-100",
+              )}
               onClick={() => setMobileOpen((o) => !o)}
               aria-expanded={mobileOpen}
               aria-controls="mobile-nav"
@@ -144,7 +183,7 @@ export function Navbar() {
               onClick={() => setMobileOpen(false)}
             />
             <m.div
-              className="absolute inset-y-0 end-0 flex w-[min(100%,24rem)] max-w-full flex-col border-s border-pearl/10 bg-dark shadow-luxury"
+              className="absolute inset-y-0 inset-e-0 flex w-[min(100%,24rem)] max-w-full flex-col border-s border-pearl/10 bg-dark shadow-luxury"
               initial={{ x: drawerOffset }}
               animate={{ x: 0 }}
               exit={{ x: drawerOffset }}
@@ -155,7 +194,7 @@ export function Navbar() {
                 <button
                   type="button"
                   onClick={() => setMobileOpen(false)}
-                  className="rounded-md p-2 text-pearl hover:bg-pearl/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold"
+                  className="rounded-md p-2 text-pearl hover:bg-pearl/10 focus-visible:outline-2 focus-visible:outline-gold"
                   aria-label={t("a11y.closeMenu")}
                 >
                   <X className="size-5" />
@@ -209,8 +248,8 @@ export function Navbar() {
 
       <div
         className={cn(
-          "pointer-events-none shrink-0 transition-[height] duration-300",
-          "h-[calc(var(--nav-h)+env(safe-area-inset-top,0px))] lg:h-[calc(var(--nav-h-lg)+env(safe-area-inset-top,0px))]",
+          "pointer-events-none shrink-0 transition-[height] duration-500 h-18",
+          !glass && "lg:h-28",
         )}
         aria-hidden
       />

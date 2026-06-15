@@ -12,8 +12,11 @@ type WhatsAppButtonProps = {
 export function WhatsAppButton({ className }: WhatsAppButtonProps) {
   const t = useTranslations("common");
   const locale = useLocale() as Locale;
-  const url = getWhatsAppUrl(SITE_CONFIG.contact.whatsapp);
   const isRtl = locale === "ar";
+  const enquiryMessage = isRtl
+    ? "مرحباً، أود الاستفسار عن خدمات وباقات زوفر للسفر والسياحة. هل يمكنكم مساعدتي في التخطيط لرحلتي؟"
+    : "Hello! I'm interested in Zover Travel & Tourism services. I'd like to enquire about your travel packages and itineraries. Could you please assist me?";
+  const url = getWhatsAppUrl(SITE_CONFIG.contact.whatsapp, enquiryMessage);
 
   return (
     <a
