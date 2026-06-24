@@ -12,7 +12,7 @@ import { pickLocalized } from "@/lib/localized";
 import { getWhatsAppUrl } from "@/lib/rtl";
 
 const MAP_EMBED =
-  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.0!2d46.7!3d24.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDQyJzAwLjAiTiA0NsKwNDInMDAuMCJF!5e0!3m2!1sen!2ssa!4v1";
+  "https://maps.google.com/maps?q=24.6108,46.6685&z=16&output=embed";
 
 export async function ContactPageContent() {
   const locale = (await getLocale()) as Locale;
@@ -117,7 +117,6 @@ export async function ContactPageContent() {
             allowFullScreen
           />
         </div>
-        <p className="mt-3 text-xs text-muted">{t("mapNote")}</p>
       </SectionWrapper>
     </>
   );

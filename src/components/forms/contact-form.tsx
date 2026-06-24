@@ -7,13 +7,43 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
+import { SITE_CONFIG } from "@/constants/site";
+import { getWhatsAppUrl } from "@/lib/rtl";
 
 export function ContactForm() {
   const t = useTranslations("forms.contact");
   const [submitted, setSubmitted] = useState(false);
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  function handleSubmit(e: { preventDefault(): void; currentTarget: HTMLFormElement }) {
     e.preventDefault();
+    if (!e.currentTarget.checkValidity()) {
+      e.currentTarget.reportValidity();
+      return;
+    }
+    const data = new FormData(e.currentTarget);
+
+    const name = (data.get("name") as string) || "";
+    const phone = (data.get("phone") as string) || "";
+    const email = (data.get("email") as string) || "";
+    const subject = (data.get("subject") as string) || "";
+    const message = (data.get("message") as string) || "";
+
+    const body = [
+      "Hello Zover International Travel & Tourism! 👋",
+      "",
+      "📋 *General Enquiry*",
+      "",
+      `*Name:* ${name}`,
+      `*Phone:* ${phone}`,
+      `*Email:* ${email}`,
+      `*Subject:* ${subject}`,
+      "",
+      "*Message:*",
+      message,
+    ].join("\n");
+
+    const url = getWhatsAppUrl(SITE_CONFIG.contact.whatsapp, body);
+    window.open(url, "_blank", "noopener,noreferrer");
     setSubmitted(true);
   }
 

@@ -92,9 +92,8 @@
       "whatsapp": "WhatsApp",
       "inquiryLink": "Travel inquiry form",
       "formTitle": "Send a message",
-      "formDescription": "We will respond within one business day. No backend connected yet — demo UI only.",
-      "mapTitle": "Visit us in Riyadh",
-      "mapNote": "Map placeholder — update embed coordinates for exact office location."
+      "formDescription": "We will respond within one business day.",
+      "mapTitle": "Visit us in Riyadh"
     },
     "blog": {
       "eyebrow": "Insights",
@@ -118,9 +117,9 @@
       "subject": "Subject",
       "message": "Message",
       "submit": "Send message",
-      "disclaimer": "Demo form — submissions are not sent to a server yet.",
+      "disclaimer": "Your message will be sent directly to our team via WhatsApp.",
       "successTitle": "Thank you",
-      "successMessage": "Your message has been recorded locally. Backend integration will connect in a future phase."
+      "successMessage": "Your message has been sent via WhatsApp. Our team will be in touch shortly."
     },
     "inquiry": {
       "name": "Full name",
@@ -143,9 +142,9 @@
         "other": "Other"
       },
       "submit": "Submit inquiry",
-      "disclaimer": "Demo form — inquiries are not sent to a server yet.",
+      "disclaimer": "Your inquiry will be sent directly to our team via WhatsApp.",
       "successTitle": "Inquiry received",
-      "successMessage": "Thank you. Our team will contact you once backend integration is live."
+      "successMessage": "Thank you. Your travel inquiry has been sent via WhatsApp. Our team will contact you shortly."
     }
   },
   "home": {

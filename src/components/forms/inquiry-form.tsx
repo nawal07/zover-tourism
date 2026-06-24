@@ -8,13 +8,56 @@ import { Label } from "@/components/ui/label";
 import { Select } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
+import { SITE_CONFIG } from "@/constants/site";
+import { getWhatsAppUrl } from "@/lib/rtl";
+
+const TRIP_TYPE_LABELS: Record<string, string> = {
+  leisure: "Leisure",
+  business: "Business",
+  luxury: "Luxury",
+  family: "Family",
+  mice: "MICE / Events",
+  other: "Other",
+};
 
 export function InquiryForm() {
   const t = useTranslations("forms.inquiry");
   const [submitted, setSubmitted] = useState(false);
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  function handleSubmit(e: { preventDefault(): void; currentTarget: HTMLFormElement }) {
     e.preventDefault();
+    if (!e.currentTarget.checkValidity()) {
+      e.currentTarget.reportValidity();
+      return;
+    }
+    const data = new FormData(e.currentTarget);
+
+    const name = (data.get("name") as string) || "";
+    const phone = (data.get("phone") as string) || "";
+    const email = (data.get("email") as string) || "";
+    const tripType = (data.get("tripType") as string) || "";
+    const travelers = (data.get("travelers") as string) || "";
+    const destination = (data.get("destination") as string) || "";
+    const dates = (data.get("dates") as string) || "";
+    const message = (data.get("message") as string) || "";
+
+    const lines = [
+      "Hello Zover International Travel & Tourism! 👋",
+      "",
+      "✈️ *Travel Enquiry*",
+      "",
+      `*Name:* ${name}`,
+      `*Phone:* ${phone}`,
+      `*Email:* ${email}`,
+      `*Trip Type:* ${TRIP_TYPE_LABELS[tripType] ?? tripType}`,
+    ];
+    if (travelers) lines.push(`*No. of Travelers:* ${travelers}`);
+    lines.push(`*Destination:* ${destination}`);
+    if (dates) lines.push(`*Preferred Dates:* ${dates}`);
+    if (message) lines.push("", "*Additional Details:*", message);
+
+    const url = getWhatsAppUrl(SITE_CONFIG.contact.whatsapp, lines.join("\n"));
+    window.open(url, "_blank", "noopener,noreferrer");
     setSubmitted(true);
   }
 
@@ -85,6 +128,7 @@ export function InquiryForm() {
             min={1}
             max={99}
             placeholder="2"
+            required
           />
         </div>
       </div>
@@ -95,7 +139,7 @@ export function InquiryForm() {
         </div>
         <div>
           <Label htmlFor="inquiry-dates">{t("dates")}</Label>
-          <Input id="inquiry-dates" name="dates" placeholder={t("datesPlaceholder")} />
+          <Input id="inquiry-dates" name="dates" placeholder={t("datesPlaceholder")} required />
         </div>
       </div>
       <div>
@@ -105,6 +149,7 @@ export function InquiryForm() {
           name="message"
           rows={5}
           placeholder={t("messagePlaceholder")}
+          required
         />
       </div>
       <p className="text-xs text-muted">{t("disclaimer")}</p>
